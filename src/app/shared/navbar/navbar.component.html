@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <a routerLink="/" class="logo">🍴 TomatoApp</a>
+
+  <div class="nav-links">
+    <ng-container *ngIf="role === 'client'">
+      <a routerLink="/food-menu">Menu</a>
+      <a routerLink="/cart">Cart</a>
+      <a routerLink="/checkout">Checkout</a>
+      <a routerLink="/orders">My Orders</a>
+    </ng-container>
+
+    <ng-container *ngIf="role === 'admin'">
+      <a routerLink="/admin/dashboard">Dashboard</a>
+      <a routerLink="/admin/manage-food">Manage Food</a>
+      <a routerLink="/admin/orders">Orders</a>
+    </ng-container>
+
+    <ng-container *ngIf="!role">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </ng-container>
+
+    <button *ngIf="role" (click)="logout()">Logout</button>
+  </div>
+</nav>

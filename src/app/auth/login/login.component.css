@@ -1,0 +1,73 @@
+.login-form {
+    max-width: 350px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .login-form input:focus {
+    border-color: #3f51b5;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: #303f9f;
+    transform: scale(1.02);
+  }
+  
+  .login-form .links {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .login-form .links a {
+    color: #3f51b5;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .login-form .links a:hover {
+    color: #303f9f;
+  }
+  
+  .login-form .error {
+    margin-top: 15px;
+    color: red;
+    font-size: 14px;
+  }
+  

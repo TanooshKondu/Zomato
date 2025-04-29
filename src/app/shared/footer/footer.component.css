@@ -1,0 +1,13 @@
+/* src/app/shared/footer/footer.component.css */
+
+.footer {
+    text-align: center;
+    padding: 16px;
+    background-color: #f8f8f8;
+    color: #888;
+    font-size: 14px;
+    margin-top: 40px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #ddd;
+  }
+  

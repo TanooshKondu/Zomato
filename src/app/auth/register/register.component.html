@@ -1,0 +1,16 @@
+<div class="register-form">
+    <h2>Register</h2>
+    <form (ngSubmit)="onRegister()">
+      <input [(ngModel)]="name" name="name" placeholder="👤 Name" required />
+      <input [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="📞 Phone Number" required />
+      <input [(ngModel)]="password" name="password" placeholder="🔒 Password" type="password" required />
+      <input [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="🔒 Confirm Password" type="password" required />
+      <button type="submit">Register</button>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </form>
+  
+    <div class="links">
+      <a routerLink="/auth/login">Already have an account? Login</a>
+    </div>
+  </div>
+  

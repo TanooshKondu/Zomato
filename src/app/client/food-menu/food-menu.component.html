@@ -1,0 +1,28 @@
+<!-- Filters Section -->
+<div class="filters">
+  <select [(ngModel)]="selectedCategory" (change)="applyFilters()">
+    <option value="">All Categories</option>
+    <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedRestaurant" (change)="applyFilters()">
+    <option value="">All Restaurants</option>
+    <option *ngFor="let res of restaurants" [value]="res">{{ res }}</option>
+  </select>
+</div>
+
+<!-- Status Messages -->
+<div *ngIf="loading" class="status-message">Loading...</div>
+<div *ngIf="error" class="status-message error">{{ error }}</div>
+<div *ngIf="!loading && !error && foodItems.length === 0" class="status-message">No food items found.</div>
+
+<!-- Food Items List -->
+<div class="food-list" *ngIf="!loading && !error">
+  <div *ngFor="let food of foodItems" class="food-card">
+    <h3>{{ food.name }}</h3>
+    <p><strong>Category:</strong> {{ food.category?.categoryName }}</p>
+    <p><strong>Restaurant:</strong> {{ food.restaurant?.restaurantName }}</p>
+    <p><strong>Price:</strong> ₹{{ food.price }}</p>
+    <button (click)="addToCart(food)">Add to Cart</button>
+  </div>
+</div>

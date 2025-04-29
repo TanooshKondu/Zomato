@@ -1,0 +1,39 @@
+<!-- src/app/client/home/home.component.html -->
+<div class="home-container">
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/food-menu">Menu</a></li>
+          <li><a routerLink="/cart">Cart</a></li>
+          <li><a routerLink="/orders">My Orders</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <h1>Welcome to TomatoApp 🍅</h1>
+      <p>Your favorite food delivered to your doorstep!</p>
+      <button class="explore-btn" routerLink="/food-menu">Explore Menu</button>
+    </section>
+
+    <!-- Today's Special Section -->
+    <section class="food-items">
+      <h2>Today's Special</h2>
+      <div class="food-item-list">
+        <div class="food-item" *ngFor="let foodItem of foodItems">
+          <img [src]="foodItem.imageUrl" alt="food" class="food-image" />
+          <h3>{{ foodItem.name }}</h3>
+          <p>{{ foodItem.description }}</p>
+          <button (click)="addToCart(foodItem)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 TomatoApp. All rights reserved.</p>
+    </footer>
+</div>

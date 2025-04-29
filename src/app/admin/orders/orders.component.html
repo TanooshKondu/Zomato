@@ -1,0 +1,62 @@
+<div class="container">
+  <h2>Admin Orders</h2>
+
+  <!-- Filter Section -->
+  <div class="filters" style="margin-bottom: 1rem;">
+    <input type="text" [(ngModel)]="filterUserId" (input)="applyFilters()" placeholder="Filter by User ID">
+    <select [(ngModel)]="filterStatus" (change)="applyFilters()">
+      <option value="">All Statuses</option>
+      <option value="Pending">Pending</option>
+      <option value="Delivered">Delivered</option>
+      <option value="Cancelled">Cancelled</option>
+    </select>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading">Loading orders...</div>
+
+  <!-- Table -->
+  <table class="table" *ngIf="!loading && filteredOrders.length > 0">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>User ID</th>
+        <th>Food Items</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of filteredOrders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.userId }}</td>
+        <td>
+          <ul style="padding-left: 16px;">
+            <li *ngFor="let item of order.items">
+              {{ item.foodName }} x{{ item.quantity }}
+            </li>
+          </ul>
+        </td>
+        <td>₹{{ order.totalAmount }}</td>
+        <td>{{ order.orderDate | date:'short' }}</td>
+        <td>
+          <select [(ngModel)]="order.status" (change)="updateStatus(order.id, $event)">
+            <option value="Pending">Pending</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteOrder(order.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && filteredOrders.length === 0">
+    <p>No orders found matching your filter.</p>
+  </div>
+</div>
