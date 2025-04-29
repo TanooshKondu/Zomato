@@ -1,3 +1,0 @@
-ng build --base-href "https://voidChetan.github.io/zomato/"
-
-npx angular-cli-ghpages --dir=dist/zomato
