@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Tkf+WdKlGhF5+AGlEESz2mkoRSTpcBl+J9W5rNBnw7M=",
+  "Source": "FoodOrderingApi",
+  "BasePath": "_content/FoodOrderingApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
